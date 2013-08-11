@@ -57,6 +57,13 @@ has $_ => (
 	gather_as  => ['thanks'],
 ) for qw( translator tester helper );
 
+sub rdf_load_all
+{
+	my $class = shift;
+	my ($model) = @_;
+	map $class->rdf_load($_, $model), $model->subjects($rdf->type, $doap->Project);
+}
+
 sub gather_all_maintainers
 {
 	require RDF::DOAP::Utils;
