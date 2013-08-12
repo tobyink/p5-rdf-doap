@@ -27,7 +27,7 @@ has mbox => (
 
 has cpanid => (
 	is         => 'ro',
-	isa        => Str,
+	isa        => Maybe[Str],
 	lazy       => 1,
 	builder    => '_build_cpanid',
 );
@@ -51,8 +51,40 @@ sub to_string
 		|| ($self->mbox && $self->mbox->[0]->uri)
 		|| ($self->rdf_about && $self->rdf_about->uri)
 		|| 'Anonymous'
-		if $_[0] eq 'compact';
-	return "$self";
+		if @_ && $_[0] eq 'compact';
+	
+	my @parts;
+	if ($self->name)
+	{
+		push @parts, $self->name;
+		if ($self->cpanid)
+		{
+			push @parts, sprintf('(cpan:%s)', uc $self->cpanid);
+		}
+	}
+	else
+	{
+		my $nick = uc($self->nick) || uc($self->cpanid);
+		push @parts, $nick if $nick;
+	}
+	
+	for my $mbox (@{$self->mbox || []})
+	{
+		if ($mbox and $mbox->uri =~ /^mailto:(.+)$/)
+		{
+			push @parts, "<$1>";
+			last;
+		}
+	}
+	
+	for my $mbox (@{$self->mbox || []})
+	{
+		push @parts, $mbox if !@parts;
+	}
+	
+	push @parts, $self->rdf_about if !@parts && $self->has_rdf_about;
+	
+	join(" ", grep !!$_, @parts) or 'Anonymous';
 }
 
 1;

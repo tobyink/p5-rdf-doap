@@ -18,10 +18,10 @@ my $obj = 'RDF::DOAP::Project'->rdf_load(
 );
 
 say "==== MAINTAINERS ====";
-print $_->dump_json for $obj->gather_all_maintainers;
+say $_->to_string for $obj->gather_all_maintainers;
 
 say "==== CONTRIBUTORS ====";
-print $_->dump_json for $obj->gather_all_contributors;
+say $_->to_string for $obj->gather_all_contributors;
 
 say "==== THANKS ====";
-print $_->dump_json for $obj->gather_all_thanks;
+say $_->to_string for $obj->gather_all_thanks;
