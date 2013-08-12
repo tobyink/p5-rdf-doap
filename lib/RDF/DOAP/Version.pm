@@ -13,21 +13,13 @@ my $doap = 'RDF::Trine::Namespace'->new('http://usefulinc.com/ns/doap#');
 my $dc   = 'RDF::Trine::Namespace'->new('http://purl.org/dc/terms/');
 my $dcs  = 'RDF::Trine::Namespace'->new('http://ontologi.es/doap-changeset#');
 
-has revision => (
+has $_ => (
 	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
-	uri        => $doap->revision,
-);
-
-has branch => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
-	is         => 'ro',
-	isa        => String,
-	coerce     => 1,
-	uri        => $doap->branch,
-);
+	uri        => $doap->$_,
+) for qw( revision name branch );
 
 has issued => (
 	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
@@ -89,7 +81,7 @@ sub _changelog_section_header
 			defined,
 			$self->revision,
 			($self->issued // 'Unknown'),
-			$self->label,
+			($self->name // $self->label),
 		),
 	) . "\n";
 }
