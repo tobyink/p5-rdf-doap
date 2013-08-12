@@ -70,7 +70,7 @@ sub project
 	my @projects = @{$self->projects};
 	return $projects[0] if @projects <= 1;
 	
-	my @sorted = 
+	my @sorted =
 		map $_->[0],
 		sort { $b->[1] <=> $a->[1] }
 		map [
@@ -90,6 +90,19 @@ __END__
 =pod
 
 =encoding utf-8
+
+=begin stopwords
+
+rdfs:Resource
+doap:Project
+doap:Repository
+foaf:Person
+doap:Version
+dcs:ChangeSet
+dcs:Change
+dbug:Issue
+
+=end stopwords
 
 =head1 NAME
 
@@ -167,7 +180,7 @@ mostly trying to describe.
 
 =head2 Bundled Classes
 
-Within each of these classes, the attributes correpond roughly to
+Within each of these classes, the attributes correspond roughly to
 the properties defined for them in the DOAP schema; however hyphens
 in property URIs become underscores in attribute names.
 

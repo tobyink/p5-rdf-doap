@@ -120,10 +120,10 @@ sub sorted_releases
 {
 	my $self = shift;
 	my @rels = sort {
-		   ($a->revision  and $b->revision  and version->parse($a->revision) cmp version->parse($b->revision))
-		or ($a->issued    and $b->issued    and $a->issued cmp $b->issued)
-		or ($a->rdf_about and $b->rdf_about and $a->rdf_about->as_ntriples cmp $b->rdf_about->as_ntriples)
-	} @{$self->release};	
+		($a->revision  and $b->revision  and version->parse($a->revision) cmp version->parse($b->revision)) or
+		($a->issued    and $b->issued    and $a->issued cmp $b->issued) or
+		($a->rdf_about and $b->rdf_about and $a->rdf_about->as_ntriples cmp $b->rdf_about->as_ntriples)
+	} @{$self->release};
 	return \@rels;
 }
 
