@@ -1,7 +1,7 @@
 package RDF::DOAP::Issue;
 
 use Moose;
-with qw(RDF::DOAP::Role::Resource);
+extends qw(RDF::DOAP::Resource);
 
 use RDF::DOAP::Types -types;
 use RDF::DOAP::Utils -traits;

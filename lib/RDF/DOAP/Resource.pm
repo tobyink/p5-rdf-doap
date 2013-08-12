@@ -1,8 +1,6 @@
-package RDF::DOAP::Role::Resource;
+package RDF::DOAP::Resource;
 
-our $MODEL;
-
-use Moose::Role;
+use Moose;
 
 use Types::Standard -types;
 use RDF::DOAP::Types -types;
@@ -60,6 +58,7 @@ has see_also => (
 	},
 );
 
+our $MODEL;
 my %objects;
 sub rdf_load
 {

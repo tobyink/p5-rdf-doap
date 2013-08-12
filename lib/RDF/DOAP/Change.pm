@@ -1,7 +1,7 @@
 package RDF::DOAP::Change;
 
 use Moose;
-with qw(RDF::DOAP::Role::Resource);
+extends qw(RDF::DOAP::Resource);
 
 use RDF::DOAP::Person;
 use RDF::DOAP::Types -types;

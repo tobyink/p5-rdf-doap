@@ -1,7 +1,7 @@
 package RDF::DOAP::ChangeSet;
 
 use Moose;
-with qw(RDF::DOAP::Role::Resource);
+extends qw(RDF::DOAP::Resource);
 
 use RDF::DOAP::ChangeSet;
 use RDF::DOAP::Change;
