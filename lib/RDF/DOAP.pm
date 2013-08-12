@@ -25,7 +25,7 @@ has projects => (
 	coerce     => 1,
 );
 
-sub from_uri
+sub from_url
 {
 	require RDF::Trine;
 	
@@ -33,7 +33,7 @@ sub from_uri
 	my ($url) = @_;
 	
 	my $model = 'RDF::Trine::Model'->new;
-	'RDF::Trine::Parser'->parse_url_into_model($url, $model);
+	'RDF::Trine::Parser'->parse_url_into_model("$url", $model);
 	
 	return $class->from_model($model);
 }

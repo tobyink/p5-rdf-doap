@@ -6,19 +6,14 @@ use RDF::Trine;
 use RDF::TrineX::Functions 'parse';
 use RDF::DOAP;
 
-my $model = parse(
-	'http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl',
-	as   => 'Turtle',
-	base => 'http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl',
-);
-
-my $obj = 'RDF::DOAP'->from_model($model)->project;
+my $doap = 'RDF::DOAP'->from_url('http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl');
+my $proj = $doap->project;
 
 say "==== MAINTAINERS ====";
-say $_->to_string for $obj->gather_all_maintainers;
+say $_->to_string for $proj->gather_all_maintainers;
 
 say "==== CONTRIBUTORS ====";
-say $_->to_string for $obj->gather_all_contributors;
+say $_->to_string for $proj->gather_all_contributors;
 
 say "==== THANKS ====";
-say $_->to_string for $obj->gather_all_thanks;
+say $_->to_string for $proj->gather_all_thanks;
