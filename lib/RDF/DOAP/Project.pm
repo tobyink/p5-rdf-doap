@@ -5,6 +5,7 @@ with qw(RDF::DOAP::Role::Resource);
 
 use RDF::DOAP::Person;
 use RDF::DOAP::Version;
+use RDF::DOAP::Repository;
 use RDF::DOAP::Types -types;
 
 use RDF::Trine::Namespace qw(rdf rdfs owl xsd);
@@ -74,7 +75,15 @@ has $_ => (
 	multi      => 1,
 ) for qw( homepage old_homepage license download_mirror screenshots category );
 
-## XXX - repository
+has repository => (
+	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	is         => 'ro',
+	isa        => ArrayRef[Repository],
+	coerce     => 1,
+	multi      => 1,
+	uri        => $doap->repository,
+	gather_as  => ['maintainer'],
+);
 
 sub rdf_load_all
 {

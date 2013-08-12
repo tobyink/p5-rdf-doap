@@ -23,7 +23,7 @@ coerce 'String',
 
 class_type 'Model', { class => 'RDF::Trine::Model' };
 
-for my $class (qw/ Project Version Change ChangeSet Person Issue /)
+for my $class (qw/ Project Version Change ChangeSet Person Issue Repository /)
 {
 	declare $class,
 		as InstanceOf[ "RDF::DOAP::$class" ];
