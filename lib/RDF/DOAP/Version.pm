@@ -21,6 +21,14 @@ has revision => (
 	uri        => $doap->revision,
 );
 
+has branch => (
+	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	is         => 'ro',
+	isa        => String,
+	coerce     => 1,
+	uri        => $doap->branch,
+);
+
 has issued => (
 	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
 	is         => 'ro',

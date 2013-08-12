@@ -15,8 +15,8 @@ has $_ => (
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
-	uri        => $doap->$_,
-) for qw(name shortdesc);
+	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
+) for qw(name shortdesc description programming_language os );
 
 has release => (
 	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
@@ -56,6 +56,25 @@ has $_ => (
 	uri        => $doap->$_,
 	gather_as  => ['thanks'],
 ) for qw( translator tester helper );
+
+has $_ => (
+	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	is         => 'ro',
+	isa        => Identifier,
+	coerce     => 1,
+	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
+) for qw( wiki bug_database mailing_list download_page );
+
+has $_ => (
+	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	is         => 'ro',
+	isa        => ArrayRef[Identifier],
+	coerce     => 1,
+	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
+	multi      => 1,
+) for qw( homepage old_homepage license download_mirror screenshots category );
+
+## XXX - repository
 
 sub rdf_load_all
 {
