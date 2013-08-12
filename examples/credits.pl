@@ -2,11 +2,10 @@ use strict;
 use warnings;
 use feature 'say';
 
-use RDF::Trine;
-use RDF::TrineX::Functions 'parse';
 use RDF::DOAP;
 
-my $doap = 'RDF::DOAP'->from_url('http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl');
+my $url  = 'http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl';
+my $doap = 'RDF::DOAP'->from_url($url);
 my $proj = $doap->project;
 
 say "==== MAINTAINERS ====";

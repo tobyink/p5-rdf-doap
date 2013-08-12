@@ -1,17 +1,12 @@
 use strict;
 use warnings;
 
-use RDF::Trine;
-use RDF::TrineX::Functions 'parse';
-use RDF::DOAP::Project;
+use RDF::DOAP;
 
-my $model = parse(
-	'http://api.metacpan.org/source/DOY/Moose-2.0604/doap.rdf',
-	as   => 'RDFXML',
-	base => 'http://api.metacpan.org/source/DOY/Moose-2.0604/doap.rdf',
-);
+my $url  = 'http://api.metacpan.org/source/DOY/Moose-2.0604/doap.rdf';
+my $doap = 'RDF::DOAP'->from_url($url);
+my $proj = $doap->project;
 
-my ($obj) = 'RDF::DOAP::Project'->rdf_load_all($model);
-
-print $obj->dump_json;
-
+print($proj->name, "\n");   # Moose
+print($_->name, "\n")
+	for @{ $proj->maintainer };

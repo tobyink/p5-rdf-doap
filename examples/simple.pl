@@ -1,20 +1,11 @@
 use strict;
 use warnings;
 
-use RDF::Trine;
-use RDF::TrineX::Functions 'parse';
-use RDF::DOAP::Project;
+use RDF::DOAP;
 
-my $model = parse(
-	'http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl',
-	as   => 'Turtle',
-	base => 'http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl',
-);
+my $url  = 'http://api.metacpan.org/source/TOBYINK/MooX-ClassAttribute-0.008/META.ttl';
+my $doap = 'RDF::DOAP'->from_url($url);
+my $proj = $doap->project;
 
-my $obj = 'RDF::DOAP::Project'->rdf_load(
-	'http://purl.org/NET/cpan-uri/dist/MooX-ClassAttribute/project',
-	$model,
-);
-
-print $obj->dump_json;
+print $proj->dump_json;
 

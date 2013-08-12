@@ -1,17 +1,11 @@
 use strict;
 use warnings;
 
-use RDF::Trine;
-use RDF::TrineX::Functions 'parse';
-use RDF::DOAP::Project;
+use RDF::DOAP;
 
-my $model = parse(
-	'http://ftp.heanet.ie/mirrors/gnome/sources/banshee/banshee.doap',
-	as   => 'RDFXML',
-	base => 'http://ftp.heanet.ie/mirrors/gnome/sources/banshee/banshee.doap',
-);
+my $url  = 'http://ftp.heanet.ie/mirrors/gnome/sources/banshee/banshee.doap#type=.rdf';
+my $doap = 'RDF::DOAP'->from_url($url);
+my $proj = $doap->project;
 
-my ($obj) = 'RDF::DOAP::Project'->rdf_load_all($model);
-
-print $obj->dump_json;
+print $proj->dump_json;
 
