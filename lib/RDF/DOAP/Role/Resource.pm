@@ -48,6 +48,7 @@ has see_also => (
 	coerce     => 1,
 	uri        => $rdfs->seeAlso,
 	multi      => 1,
+	lazy       => 1,
 	default    => sub {
 		my $self = shift;
 		if ($self->has_rdf_about && $self->rdf_about =~ /^tdb:[^:]*:(.*)$/)
