@@ -1,5 +1,8 @@
 package RDF::DOAP::Resource;
 
+our $AUTHORITY = 'cpan:TOBYINK';
+our $VERSION   = 0.001;
+
 use Moose;
 
 use Types::Standard -types;
