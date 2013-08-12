@@ -18,7 +18,7 @@ has $_ => (
 	isa        => String,
 	coerce     => 1,
 	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
-) for qw(name shortdesc description programming_language os );
+) for qw(name shortdesc created description programming_language os );
 
 has release => (
 	traits     => [ WithURI ],
@@ -136,7 +136,21 @@ sub changelog
 sub _changelog_header
 {
 	my $self = shift;
-	return $self->name . "\n";
+	my @lines = (
+		$self->name,
+		("=" x length($self->name)),
+		"",
+	);
+	push @lines, sprintf('%-14s%s', "$_->[0]:", $_->[1])
+		for grep defined($_->[1]), (
+			["Created" => $self->created],
+			map(["Home page"=>$_], @{$self->homepage||[]}),
+			["Bug tracker" => $self->bug_database],
+			["Wiki" => $self->wiki],
+			["Mailing list" => $self->mailing_list],
+			map(["Maintainer"=>$_->to_string], @{$self->maintainer||[]}),
+		);
+	return join("\n", @lines)."\n";
 }
 
 1;
