@@ -6,6 +6,7 @@ use Moose::Role;
 
 use Types::Standard -types;
 use RDF::DOAP::Types -types;
+use RDF::DOAP::Utils -traits;
 use Scalar::Util qw( weaken refaddr );
 
 use RDF::Trine::Namespace qw(rdf rdfs owl xsd);
@@ -24,7 +25,7 @@ has rdf_model => (
 );
 
 has rdf_type => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[Identifier],
 	coerce     => 1,
@@ -34,7 +35,7 @@ has rdf_type => (
 );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
@@ -42,7 +43,7 @@ has $_ => (
 ) for qw( label comment );
 
 has see_also => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[Identifier],
 	coerce     => 1,
@@ -73,7 +74,7 @@ sub rdf_load
 	my (%attr, %multi);
 	for my $a ($class->meta->get_all_attributes)
 	{
-		$a->can('uri') or next;
+		$a->does(WithURI) or next;
 		$attr{ $a->uri }  = $a->init_arg || $a->name;
 		$multi{ $a->uri } = $a->multi;
 	}

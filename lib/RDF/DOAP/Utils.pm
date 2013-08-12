@@ -7,6 +7,23 @@ use RDF::DOAP::Types -types;
 use match::simple 'match';
 use List::MoreUtils 'uniq';
 
+use MooseX::AttributeTags (
+	WithURI   => [
+		uri       => [ is => 'ro', isa => Identifier, coerce => 1, required => 1 ],
+		multi     => [ is => 'ro', isa => Bool, default  => 0 ],
+	],
+	Gathering => [
+		gather_as => [ is => 'ro', isa => ArrayRef[Str], default  => sub { [] } ],
+	],
+);
+
+use Exporter::TypeTiny;
+our @ISA         = qw(Exporter::TypeTiny);
+our @EXPORT_OK   = qw( WithURI Gathering );
+our %EXPORT_TAGS = (
+	traits => [qw( WithURI Gathering )]
+);
+
 our %seen;
 
 sub _gather_objects

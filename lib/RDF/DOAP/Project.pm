@@ -7,12 +7,13 @@ use RDF::DOAP::Person;
 use RDF::DOAP::Version;
 use RDF::DOAP::Repository;
 use RDF::DOAP::Types -types;
+use RDF::DOAP::Utils -traits;
 
 use RDF::Trine::Namespace qw(rdf rdfs owl xsd);
 my $doap = 'RDF::Trine::Namespace'->new('http://usefulinc.com/ns/doap#');
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
@@ -20,7 +21,7 @@ has $_ => (
 ) for qw(name shortdesc description programming_language os );
 
 has release => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[Version],
 	coerce     => 1,
@@ -29,7 +30,7 @@ has release => (
 );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI, Gathering ],
 	is         => 'ro',
 	isa        => ArrayRef[Person],
 	coerce     => 1,
@@ -39,7 +40,7 @@ has $_ => (
 ) for qw( maintainer );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI, Gathering ],
 	is         => 'ro',
 	isa        => ArrayRef[Person],
 	coerce     => 1,
@@ -49,7 +50,7 @@ has $_ => (
 ) for qw( developer documenter );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI, Gathering ],
 	is         => 'ro',
 	isa        => ArrayRef[Person],
 	coerce     => 1,
@@ -59,7 +60,7 @@ has $_ => (
 ) for qw( translator tester helper );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => Identifier,
 	coerce     => 1,
@@ -67,7 +68,7 @@ has $_ => (
 ) for qw( wiki bug_database mailing_list download_page );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[Identifier],
 	coerce     => 1,
@@ -76,13 +77,12 @@ has $_ => (
 ) for qw( homepage old_homepage license download_mirror screenshots category );
 
 has repository => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[Repository],
 	coerce     => 1,
 	multi      => 1,
 	uri        => $doap->repository,
-	gather_as  => ['maintainer'],
 );
 
 sub rdf_load_all

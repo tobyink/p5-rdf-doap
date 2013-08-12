@@ -4,12 +4,13 @@ use Moose;
 with qw(RDF::DOAP::Role::Resource);
 
 use RDF::DOAP::Types -types;
+use RDF::DOAP::Utils -traits;
 
 use RDF::Trine::Namespace qw(rdf rdfs owl xsd);
 my $doap = 'RDF::Trine::Namespace'->new('http://usefulinc.com/ns/doap#');
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => Identifier,
 	coerce     => 1,
@@ -17,7 +18,7 @@ has $_ => (
 ) for qw( browse location );
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,

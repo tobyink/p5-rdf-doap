@@ -4,12 +4,13 @@ use Moose;
 with qw(RDF::DOAP::Role::Resource);
 
 use RDF::DOAP::Types -types;
+use RDF::DOAP::Utils -traits;
 
 use RDF::Trine::Namespace qw(rdf rdfs owl xsd);
 my $foaf = 'RDF::Trine::Namespace'->new('http://xmlns.com/foaf/0.1/');
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
@@ -17,7 +18,7 @@ has $_ => (
 ) for qw( name nick );
 
 has mbox => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[Identifier],
 	coerce     => 1,

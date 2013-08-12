@@ -5,6 +5,7 @@ with qw(RDF::DOAP::Role::Resource);
 
 use RDF::DOAP::Person;
 use RDF::DOAP::Types -types;
+use RDF::DOAP::Utils -traits;
 use List::MoreUtils qw(uniq);
 use Text::Wrap qw(wrap);
 
@@ -14,7 +15,7 @@ my $dc   = 'RDF::Trine::Namespace'->new('http://purl.org/dc/terms/');
 my $dcs  = 'RDF::Trine::Namespace'->new('http://ontologi.es/doap-changeset#');
 
 has blame => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI, Gathering ],
 	is         => 'ro',
 	isa        => ArrayRef[Person],
 	coerce     => 1,
@@ -24,7 +25,7 @@ has blame => (
 );
 
 has thanks => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI, Gathering ],
 	is         => 'ro',
 	isa        => ArrayRef[Person],
 	coerce     => 1,

@@ -7,6 +7,7 @@ use RDF::DOAP::ChangeSet;
 use RDF::DOAP::Change;
 use RDF::DOAP::Person;
 use RDF::DOAP::Types -types;
+use RDF::DOAP::Utils -traits;
 
 use RDF::Trine::Namespace qw(rdf rdfs owl xsd);
 my $doap = 'RDF::Trine::Namespace'->new('http://usefulinc.com/ns/doap#');
@@ -14,7 +15,7 @@ my $dc   = 'RDF::Trine::Namespace'->new('http://purl.org/dc/terms/');
 my $dcs  = 'RDF::Trine::Namespace'->new('http://ontologi.es/doap-changeset#');
 
 has $_ => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
@@ -22,7 +23,7 @@ has $_ => (
 ) for qw( revision name branch );
 
 has issued => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => String,
 	coerce     => 1,
@@ -30,7 +31,7 @@ has issued => (
 );
 
 has changesets => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI ],
 	is         => 'ro',
 	isa        => ArrayRef[ChangeSet],
 	coerce     => 1,
@@ -47,7 +48,7 @@ has changes => (
 );
 
 has released_by => (
-	traits     => [ 'RDF::DOAP::Trait::WithURI' ],
+	traits     => [ WithURI, Gathering ],
 	is         => 'ro',
 	isa        => Person,
 	coerce     => 1,
