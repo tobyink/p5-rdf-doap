@@ -46,7 +46,7 @@ sub _gather_objects
 			grep defined,
 			map ArrayRef->check($_) ? @$_ : $_,
 			map $_->get_value($self),
-			grep $_->can('gather_as') && match($relation, $_->gather_as),
+			grep $_->does(Gathering) && match($relation, $_->gather_as),
 			$self->meta->get_all_attributes;
 		
 		my @recursive =
@@ -54,7 +54,7 @@ sub _gather_objects
 			map _gather_objects($_, $relation),
 			grep defined,
 			map $_->get_value($self),
-			grep !($_->can('gather_as') && match($relation, $_->gather_as)),
+			grep !($_->does(Gathering) && match($relation, $_->gather_as)),
 			$self->meta->get_all_attributes;
 		
 		return uniq(@local, @recursive);
