@@ -119,14 +119,14 @@ sub rdf_get
 
 sub rdf_get_literal
 {
-	my $self = shift;	
+	my $self = shift;
 	my @values = grep $_->is_literal, $self->rdf_get(@_);
 	wantarray ? @values : $values[0];
 }
 
 sub rdf_get_uri
 {
-	my $self = shift;	
+	my $self = shift;
 	my @values = grep $_->is_resource, $self->rdf_get(@_);
 	wantarray ? @values : $values[0];
 }
