@@ -106,6 +106,30 @@ sub rdf_load
 	return $self;
 }
 
+sub rdf_get
+{
+	my $self = shift;
+	croak "This object cannot rdf_get; stopped"
+		unless $self->has_rdf_model && $self->has_rdf_about;
+	
+	my @values = $self->model->objects_for_predicate_list(@_);
+	wantarray ? @values : $values[0];
+}
+
+sub rdf_get_literal
+{
+	my $self = shift;	
+	my @values = grep $_->is_literal, $self->rdf_get(@_);
+	wantarray ? @values : $values[0];
+}
+
+sub rdf_get_uri
+{
+	my $self = shift;	
+	my @values = grep $_->is_resource, $self->rdf_get(@_);
+	wantarray ? @values : $values[0];
+}
+
 sub TO_JSON
 {
 	my $self = shift;
