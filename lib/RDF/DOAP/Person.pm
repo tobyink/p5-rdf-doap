@@ -1,10 +1,14 @@
 package RDF::DOAP::Person;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = 0.003;
+our $VERSION   = 0.004;
 
 use Moose;
 extends qw(RDF::DOAP::Resource);
+
+use overload
+	q[""]    => sub { shift->to_string },
+	fallback => 1;
 
 use RDF::DOAP::Types -types;
 use RDF::DOAP::Utils -traits;

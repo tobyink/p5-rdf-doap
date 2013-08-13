@@ -16,3 +16,10 @@
 		item "RDF::DOAP::Resource now has `rdf_get`, `rdf_get_literal` and `rdf_get_uri` methods."^^Addition;
 	].
 
+`RDF-DOAP 0.004 cpan:TOBYINK`
+	issued  2013-08-13;
+	changeset [
+		item "Fix `rdf_get`, `rdf_get_literal` and `rdf_get_uri` methods."^^Bugfix;
+		item "Improved stringification for RDF::DOAP::Person."^^Change;
+	].
+
