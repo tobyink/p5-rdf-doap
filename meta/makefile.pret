@@ -4,6 +4,7 @@
 
 `RDF-DOAP`
 	:test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
+	:test-requirement       [ :on "Test::LongString"^^:CpanId ];
 	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
 	:runtime-requirement    [ :on "Types::Standard 0.022"^^:CpanId ];
 	:runtime-requirement    [ :on "JSON 2.00"^^:CpanId ];
