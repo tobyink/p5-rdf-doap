@@ -24,3 +24,9 @@
 		item "Add missing dep on Test::LongString."^^Packaging;
 	].
 
+`RDF-DOAP 0.005 cpan:TOBYINK`
+	issued  2013-08-13;
+	changeset [
+		item "Further fix for `rdf_get`, `rdf_get_literal` and `rdf_get_uri` methods."^^Bugfix;
+	].
+
