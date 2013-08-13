@@ -5,6 +5,7 @@ our $VERSION   = 0.003;
 
 use Moose;
 
+use Carp;
 use Types::Standard -types;
 use RDF::DOAP::Types -types;
 use RDF::DOAP::Utils -traits;
