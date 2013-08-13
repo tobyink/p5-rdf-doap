@@ -27,6 +27,8 @@ has mbox => (
 	coerce     => 1,
 	uri        => $foaf->mbox,
 	multi      => 1,
+	lazy       => 1,
+	builder    => '_build_mbox',
 );
 
 has cpanid => (
@@ -40,9 +42,18 @@ sub _build_cpanid
 {
 	my $self = shift;
 	return unless $self->has_rdf_about;
-	$self->rdf_about =~ m{^http://purl\.org/NET/cpan-uri/person/(\w+)$}
+	return unless $self->rdf_about->is_resource;
+	$self->rdf_about->uri =~ m{^http://purl\.org/NET/cpan-uri/person/(\w+)$}
 		and return $1;
 	return;
+}
+
+sub _build_mbox
+{
+	my $self = shift;
+	return [sprintf('mailto:%s@cpan.org', $self->cpanid)]
+		if defined $self->cpanid;
+	return [];
 }
 
 sub to_string
@@ -63,7 +74,7 @@ sub to_string
 		push @parts, $self->name;
 		if ($self->cpanid)
 		{
-			push @parts, sprintf('(cpan:%s)', uc $self->cpanid);
+			push @parts, sprintf('(%s)', uc $self->cpanid);
 		}
 	}
 	else
@@ -72,7 +83,7 @@ sub to_string
 		push @parts, $nick if $nick;
 	}
 	
-	for my $mbox (@{$self->mbox || []})
+	for my $mbox (@{$self->mbox})
 	{
 		if ($mbox and $mbox->uri =~ /^mailto:(.+)$/)
 		{
@@ -81,7 +92,7 @@ sub to_string
 		}
 	}
 	
-	for my $mbox (@{$self->mbox || []})
+	for my $mbox (@{$self->mbox})
 	{
 		push @parts, $mbox if !@parts;
 	}
