@@ -35,14 +35,14 @@ my $model = 'RDF::Trine::Model'->temporary_model;
 'RDF::Trine::Parser::Turtle'->new->parse_file_into_model('http://localhost/', \*DATA, $model);
 my $proj = 'RDF::DOAP'->from_model($model)->project;
 
-is($proj->changelog, <<'OUTPUT', 'changelog as expected'); done_testing;
+is_string($proj->changelog, <<'OUTPUT', 'changelog as expected'); done_testing;
 MooX-ClassAttribute
 ===================
 
 Created:      2012-12-27
 Home page:    <https://metacpan.org/release/MooX-ClassAttribute>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=MooX-ClassAttribute>
-Maintainer:   Toby Inkster <tobyink@cpan.org>
+Maintainer:   Toby Inkster (TOBYINK) <tobyink@cpan.org>
 
 0.008	2013-07-10
 

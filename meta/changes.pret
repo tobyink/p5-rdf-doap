@@ -21,5 +21,6 @@
 	changeset [
 		item "Fix `rdf_get`, `rdf_get_literal` and `rdf_get_uri` methods."^^Bugfix;
 		item "Improved stringification for RDF::DOAP::Person."^^Change;
+		item "Add missing dep on Test::LongString."^^Packaging;
 	].
 
