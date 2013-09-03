@@ -37,3 +37,10 @@
 		item "Changed the generated changelogs to include groupings."^^dcs:BackCompat;
 	].
 
+`RDF-DOAP 0.007 cpan:TOBYINK`
+	issued  2013-09-03;
+	changeset [
+		item "Make sure entries within changelog groups are lexicograpically sorted."^^Change;
+		item "Changed the generated changelogs yet again, to include 'RT' or 'GH' before issue numbers."^^dcs:BackCompat;
+	].
+
