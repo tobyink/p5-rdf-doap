@@ -91,7 +91,7 @@ sub changelog_section
 			$self->_changelog_section_header,
 			map {
 				my ($head, @lines) = @$_;
-				(@lines, '');
+				(sort(@lines), '');
 			} @ss,
 		);
 	}
@@ -101,7 +101,7 @@ sub changelog_section
 		$self->_changelog_section_header,
 		map {
 			my ($head, @lines) = @$_;
-			(" [ $head ]", @lines, '');
+			(" [ $head ]", sort(@lines), '');
 		} @ss,
 	);
 }
