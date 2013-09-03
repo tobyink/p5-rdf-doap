@@ -34,6 +34,6 @@
 	issued  2013-09-03;
 	changeset [
 		item "New roles added for dcs:BackCompat and dcs:Tests."^^Update;
-		item "Changed the generated changelogs to include groupings."^^BackCompat;
+		item "Changed the generated changelogs to include groupings."^^dcs:BackCompat;
 	].
 
