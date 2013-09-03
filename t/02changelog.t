@@ -48,7 +48,7 @@ Maintainer:   Toby Inkster (TOBYINK) <tobyink@cpan.org>
 
  [ Bug Fixes ]
  - Support non-coderef defaults.
-   Fixes #87638.
+   Fixes RT#87638.
    Rob Bloodgood++
    <https://rt.cpan.org/Ticket/Display.html?id=87638>
 
@@ -60,7 +60,7 @@ Maintainer:   Toby Inkster (TOBYINK) <tobyink@cpan.org>
  [ Bug Fixes ]
  - Fixed error: Can't call method "isa" on an undefined value at
    MooX/CaptainHook.pm line 27.
-   Fixes #86828.
+   Fixes RT#86828.
    Dinis Rebolo++
    <https://rt.cpan.org/Ticket/Display.html?id=86828>
 
