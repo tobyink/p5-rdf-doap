@@ -44,3 +44,9 @@
 		item "Changed the generated changelogs yet again, to include 'RT' or 'GH' before issue numbers."^^dcs:BackCompat;
 	].
 
+`RDF-DOAP 0.008 cpan:TOBYINK`
+	issued  2013-09-03;
+	changeset [
+		item "Fix some 'uninitialized' warnings."^^Bugfix;
+	].
+
