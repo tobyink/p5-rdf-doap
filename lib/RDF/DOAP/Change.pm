@@ -72,9 +72,18 @@ sub changelog_entry
 sub changelog_lines
 {
 	my $self = shift;
-	my @type = sort map $_->uri =~ m{(\w+)$}, @{ $self->rdf_type };
+	my ($notype) = @_;
 	
-	my @lines = "(@type) " . $self->label;
+	my @lines;
+	if ($notype)
+	{
+		@lines = $self->label;
+	}
+	else
+	{
+		my @type = sort map $_->uri =~ m{(\w+)$}, @{ $self->rdf_type };
+		@lines = "(@type) " . $self->label;
+	}
 	
 	for my $person (uniq sort @{$self->blame||[]}, @{$self->thanks||[]})
 	{

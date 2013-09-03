@@ -162,4 +162,14 @@ sub dump_json
 	);
 }
 
+sub isa
+{
+	my $self = shift;
+	
+	return grep($_[0]->equal($_), @{$self->rdf_type})
+		if Identifier->check(@_);
+	
+	$self->SUPER::isa(@_);
+}
+
 1;

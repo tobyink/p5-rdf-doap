@@ -46,46 +46,54 @@ Maintainer:   Toby Inkster (TOBYINK) <tobyink@cpan.org>
 
 0.008	2013-07-10
 
- - (Bugfix) Support non-coderef defaults.
+ [ Bug Fixes ]
+ - Support non-coderef defaults.
    Fixes #87638.
    Rob Bloodgood++
    <https://rt.cpan.org/Ticket/Display.html?id=87638>
- - (Packaging) Switch to Dist::Inkt.
+
+ [ Packaging ]
+ - Switch to Dist::Inkt.
 
 0.007	2013-07-10
 
- - (Bugfix) Fixed error: Can't call method "isa" on an undefined value at
+ [ Bug Fixes ]
+ - Fixed error: Can't call method "isa" on an undefined value at
    MooX/CaptainHook.pm line 27.
    Fixes #86828.
    Dinis Rebolo++
    <https://rt.cpan.org/Ticket/Display.html?id=86828>
- - (Documentation) Note incompatibility with Moo 1.001000.
+
+ [ Documentation ]
+ - Note incompatibility with Moo 1.001000.
 
 0.006	2013-01-11
 
- - (Bugfix) Avoid triggering an 'in cleanup' error on some older versions
-   of Perl.
+ [ Bug Fixes ]
+ - Avoid triggering an 'in cleanup' error on some older versions of Perl.
 
 0.005	2013-01-05
 
- - (Bugfix) Avoid triggering Sub::Exporter::Progressive's dependency on
+ [ Bug Fixes ]
+ - Avoid triggering Sub::Exporter::Progressive's dependency on
    Sub::Exporter.
 
 0.004	2013-01-03
 
- - (Bugfix) Fix MooX::CaptainHook on_inflation fragility when Moose is
-   loaded early.
+ [ Bug Fixes ]
+ - Fix MooX::CaptainHook on_inflation fragility when Moose is loaded early.
 
 0.003	2013-01-03
 
- - (Bugfix) Prevent MooX::CaptainHook from inadvertantly loading Moose.
+ [ Bug Fixes ]
+ - Prevent MooX::CaptainHook from inadvertantly loading Moose.
 
 0.002	2013-01-01
 
- - (Packaging) List dependencies.
+ [ Packaging ]
+ - List dependencies.
 
 0.001	2013-01-01	Initial release
-
 OUTPUT
 __DATA__
 
