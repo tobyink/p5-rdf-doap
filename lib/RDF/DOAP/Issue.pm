@@ -1,7 +1,7 @@
 package RDF::DOAP::Issue;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = 0.005;
+our $VERSION   = 0.006;
 
 use Moose;
 extends qw(RDF::DOAP::Resource);

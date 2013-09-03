@@ -30,3 +30,10 @@
 		item "Further fix for `rdf_get`, `rdf_get_literal` and `rdf_get_uri` methods."^^Bugfix;
 	].
 
+`RDF-DOAP 0.006 cpan:TOBYINK`
+	issued  2013-09-03;
+	changeset [
+		item "New roles added for dcs:BackCompat and dcs:Tests."^^Update;
+		item "Changed the generated changelogs to include groupings."^^BackCompat;
+	].
+
