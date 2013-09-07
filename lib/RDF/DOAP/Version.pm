@@ -153,6 +153,7 @@ sub _build_changelog_subsections
 	
 	for my $ch (@{ $self->changes })
 	{
+		my $found_section;
 		for my $class (@classifications)
 		{
 			my ($type, $section, $tag) = @$class;
@@ -161,8 +162,14 @@ sub _build_changelog_subsections
 				my $text = join "\n", $ch->changelog_lines(1);
 				$text = "$tag: $text" if $tag;
 				push @{ $sections{$section} }, wrap(" - ", "   ", $text);
+				$found_section++;
 				last;
 			}
+		}
+		unless ($found_section)
+		{
+			my $text = join "\n", $ch->changelog_lines(1);
+			push @{ $sections{Other} }, wrap(" - ", "   ", $text);
 		}
 	}
 	
