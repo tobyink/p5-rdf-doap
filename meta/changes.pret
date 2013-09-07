@@ -50,3 +50,8 @@
 		item "Fix some 'uninitialized' warnings."^^Bugfix;
 	].
 
+`RDF-DOAP 0.009 cpan:TOBYINK`
+	issued  2013-09-07;
+	changeset [
+		item "Fix entries in changelog for changes with no explicit rdf:type."^^Bugfix;
+	].

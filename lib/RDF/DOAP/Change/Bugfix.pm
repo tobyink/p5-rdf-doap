@@ -1,7 +1,7 @@
 package RDF::DOAP::Change::Bugfix;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = 0.008;
+our $VERSION   = 0.009;
 
 use Moose::Role;
 requires qw( rdf_about rdf_model );
