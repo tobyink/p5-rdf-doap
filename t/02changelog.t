@@ -74,7 +74,6 @@ Maintainer:   Toby Inkster (TOBYINK) <tobyink@cpan.org>
 
 0.005	2013-01-05
 
- [ Bug Fixes ]
  - Avoid triggering Sub::Exporter::Progressive's dependency on
    Sub::Exporter.
 
@@ -197,7 +196,6 @@ __DATA__
 	dc:issued            "2013-01-05"^^xsd:date;
 	doap-changeset:changeset [
 		doap-changeset:item [
-			a doap-changeset:Bugfix;
 			rdfs:label "Avoid triggering Sub::Exporter::Progressive's dependency on Sub::Exporter.";
 		];
 	];
