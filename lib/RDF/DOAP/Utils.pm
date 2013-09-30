@@ -20,8 +20,8 @@ use MooseX::AttributeTags (
 	],
 );
 
-use Exporter::TypeTiny;
-our @ISA         = qw(Exporter::TypeTiny);
+use Exporter::Tiny ();
+our @ISA         = qw( Exporter::Tiny );
 our @EXPORT_OK   = qw( WithURI Gathering );
 our %EXPORT_TAGS = (
 	traits => [qw( WithURI Gathering )]
