@@ -6,7 +6,6 @@ our $VERSION   = '0.010';
 use Moose;
 
 use Carp;
-use Types::Standard -types;
 use RDF::DOAP::Types -types;
 use RDF::DOAP::Utils -traits;
 use Scalar::Util qw( weaken refaddr );
