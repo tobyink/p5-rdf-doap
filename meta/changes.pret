@@ -61,3 +61,9 @@
 	changeset [
 		item "Use Exporter::Tiny instead of Exporter::TypeTiny."^^Bugfix;
 	].
+
+`RDF-DOAP 0.011 cpan:TOBYINK`
+	issued  2014-08-12;
+	changeset [
+		item "Don't import Types::Standard type constraints twice over."^^Bugfix;
+	].
