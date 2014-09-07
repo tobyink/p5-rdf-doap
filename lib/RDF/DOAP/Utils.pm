@@ -67,7 +67,7 @@ sub _gather_objects
 sub gather_objects
 {
 	local %seen;
-	grep defined, _gather_objects(@_);
+	grep ref, _gather_objects(@_);
 }
 
 1;
