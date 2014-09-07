@@ -67,3 +67,9 @@
 	changeset [
 		item "Don't import Types::Standard type constraints twice over."^^Bugfix;
 	].
+
+`RDF-DOAP 0.012 cpan:TOBYINK`
+	issued  2014-09-07;
+	changeset [
+		item "Prevent gather_objects from returning non-references."^^Bugfix;
+	].
