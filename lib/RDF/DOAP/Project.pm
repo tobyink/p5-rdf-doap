@@ -68,7 +68,7 @@ has $_ => (
 	isa        => Identifier,
 	coerce     => 1,
 	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
-) for qw( wiki bug_database mailing_list download_page support_forum developer_forum );
+) for qw( wiki bug_database mailing_list download_page );
 
 has $_ => (
 	traits     => [ WithURI ],
@@ -77,7 +77,7 @@ has $_ => (
 	coerce     => 1,
 	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
 	multi      => 1,
-) for qw( homepage old_homepage license download_mirror screenshots category );
+) for qw( homepage old_homepage license download_mirror screenshots category support_forum developer_forum );
 
 has repository => (
 	traits     => [ WithURI ],
