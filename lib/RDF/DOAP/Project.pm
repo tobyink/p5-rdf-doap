@@ -68,7 +68,7 @@ has $_ => (
 	isa        => Identifier,
 	coerce     => 1,
 	uri        => do { (my $x = $_) =~ s/_/-/g; $doap->$x },
-) for qw( wiki bug_database mailing_list download_page );
+) for qw( wiki bug_database mailing_list download_page support_forum developer-forum );
 
 has $_ => (
 	traits     => [ WithURI ],
