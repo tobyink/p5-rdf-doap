@@ -8,7 +8,7 @@ use warnings;
 
 use RDF::DOAP::Types -types;
 use match::simple 'match';
-use List::MoreUtils 'uniq';
+use List::Util 'uniq';
 
 use MooseX::AttributeTags (
 	WithURI   => [
