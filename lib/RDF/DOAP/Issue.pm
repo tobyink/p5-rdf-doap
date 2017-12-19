@@ -1,6 +1,6 @@
 package RDF::DOAP::Issue;
 
-our $AUTHORITY = 'cpan:TOBYINK';
+our $AUTHORITY = 'cpan:KJETILK';
 our $VERSION   = '0.012';
 
 use Moose;

@@ -4,7 +4,7 @@ use warnings;
 
 package RDF::DOAP;
 
-our $AUTHORITY = 'cpan:TOBYINK';
+our $AUTHORITY = 'cpan:KJETILK';
 our $VERSION   = '0.012';
 
 use Moose;
