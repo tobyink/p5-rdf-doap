@@ -1,6 +1,6 @@
 package RDF::DOAP::Repository;
 
-our $AUTHORITY = 'cpan:KJETILK';
+our $AUTHORITY = 'cpan:TOBYINK';
 our $VERSION   = '0.012';
 
 use Moose;
