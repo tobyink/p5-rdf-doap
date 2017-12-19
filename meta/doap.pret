@@ -13,7 +13,7 @@
     :repository           [ a :GitRepository;
         :browse <https://github.com/kjetilk/p5-rdf-doap> ;
         prov:has_provenance <http://git2prov.org/git2prov?giturl=https%3A%2F%2Fgithub.com%2Fkjetilk%2Fp5-rdf-doap&serialization=PROV-O#>
-        ] ;
+    ] ;
     :created              2013-08-11;
     :category             <http://dbpedia.org/resource/Category:Semantic_Web> ;
     :license              <http://dev.perl.org/licenses/>;
