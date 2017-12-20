@@ -79,5 +79,5 @@
 	changeset [
 	  item "Replace List::MoreUtils with List::Util."^^Change;
  	  item "RDF::DOAP::Project now has methods for foras."^^Addition;
-	  item "Some minor chages."^^Change;
+	  item "Some minor changes."^^Change;
 	].
