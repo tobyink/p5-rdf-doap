@@ -10,6 +10,7 @@
     :homepage             <https://metacpan.org/release/RDF-DOAP>;
     :download-page        <https://metacpan.org/release/RDF-DOAP>;
     :bug-database         <https://github.com/kjetilk/p5-rdf-doap/issues> ;
+    :support-forum        <irc://irc.perl.org/#perlrdf> ;
     :repository           [ a :GitRepository;
         :browse <https://github.com/kjetilk/p5-rdf-doap> ;
         prov:has_provenance <http://git2prov.org/git2prov?giturl=https%3A%2F%2Fgithub.com%2Fkjetilk%2Fp5-rdf-doap&serialization=PROV-O#>
