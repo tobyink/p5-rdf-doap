@@ -3,6 +3,9 @@ package RDF::DOAP::Types;
 our $AUTHORITY = 'cpan:TOBYINK';
 our $VERSION   = '0.013_01';
 
+use strict;
+use warnings;
+
 use Type::Utils -all;
 use Type::Library -base;
 use Types::TypeTiny qw(StringLike);
