@@ -1,7 +1,7 @@
 package RDF::DOAP::Change::Packaging;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.012';
+our $VERSION   = '0.013_01';
 
 use Moose::Role;
 
