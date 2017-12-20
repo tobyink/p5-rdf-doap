@@ -73,3 +73,11 @@
 	changeset [
 		item "Prevent gather_objects from returning non-references."^^Bugfix;
 	].
+
+`RDF-DOAP 0.013_01 cpan:KJETILK`
+	issued  2017-12-20;
+	changeset [
+	  item "Replace List::MoreUtils with List::Util."^^Change;
+ 	  item "RDF::DOAP::Project now has methods for foras."^^Addition;
+	  item "Some minor chages."^^Change;
+	].
