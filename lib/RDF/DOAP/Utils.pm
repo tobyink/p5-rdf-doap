@@ -1,7 +1,7 @@
 package RDF::DOAP::Utils;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.013_02';
+our $VERSION   = '0.100';
 
 use strict;
 use warnings;

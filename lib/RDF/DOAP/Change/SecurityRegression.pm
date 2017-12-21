@@ -1,7 +1,7 @@
 package RDF::DOAP::Change::SecurityRegression;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.013_02';
+our $VERSION   = '0.100';
 
 use Moose::Role;
 

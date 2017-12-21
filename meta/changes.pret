@@ -74,7 +74,7 @@
 		item "Prevent gather_objects from returning non-references."^^Bugfix;
 	].
 
-`RDF-DOAP 0.013_02 cpan:KJETILK`
+`RDF-DOAP 0.100 cpan:KJETILK`
 	issued  2017-12-21;
 	changeset [
 	  item "Replace List::MoreUtils with List::Util."^^Change;
