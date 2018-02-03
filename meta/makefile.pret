@@ -9,7 +9,7 @@
 	:runtime-requirement    [ :on "Exporter::Tiny 0.026"^^:CpanId ];
 	:runtime-requirement    [ :on "Types::Standard 0.022"^^:CpanId ];
 	:runtime-requirement    [ :on "JSON 2.00"^^:CpanId ];
-	:runtime-requirement    [ :on "List::MoreUtils 0"^^:CpanId ];
+	:runtime-requirement    [ :on "List::Util 1.45"^^:CpanId ];
 	:runtime-requirement    [ :on "Moose 2.0600"^^:CpanId ];
 	:runtime-requirement    [ :on "MooseX::AttributeTags 0.001"^^:CpanId ];
 	:runtime-requirement    [ :on "RDF::Trine 1.000"^^:CpanId ];

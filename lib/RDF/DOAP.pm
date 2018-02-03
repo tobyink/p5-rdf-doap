@@ -5,7 +5,7 @@ use warnings;
 package RDF::DOAP;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.012';
+our $VERSION   = '0.100';
 
 use Moose;
 extends 'RDF::DOAP::Resource';
@@ -228,7 +228,7 @@ Correponds to I<< dbug:Issue >>.
 =head1 BUGS
 
 Please report any bugs to
-L<http://rt.cpan.org/Dist/Display.html?Queue=RDF-DOAP>.
+L<https://github.com/kjetilk/p5-rdf-doap/issues>.
 
 =head1 SEE ALSO
 
@@ -259,10 +259,11 @@ L<The DOAP Bugs Schema|http://ontologi.es/doap-bugs#>.
 =head1 AUTHOR
 
 Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
+Kjetil Kjernsmo E<lt>kjetilk@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2013 by Toby Inkster.
+This software is copyright (c) 2013 by Toby Inkster, 2017 by Kjetil Kjernsmo.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
