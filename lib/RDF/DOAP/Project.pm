@@ -137,7 +137,7 @@ sub changelog
 		my $next = shift @releases;
 		if (@releases) {
 			my $found_catchup = undef;
-			for my $i (0 .. $#releases) {
+			for my $i (reverse(0 .. $#releases)) {
 				for my $cs (@{ $releases[$i]->changesets || [] }) {
 					if ($cs->has_versus and $cs->versus->revision eq $next->revision) {
 						$found_catchup = $i;
