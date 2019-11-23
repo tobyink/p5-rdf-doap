@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.102';
+our $VERSION   = '0.103';
 
 use Type::Utils -all;
 use Type::Library -base;
