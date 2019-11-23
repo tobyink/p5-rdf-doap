@@ -73,3 +73,9 @@
 	changeset [
 		item "Prevent gather_objects from returning non-references."^^Bugfix;
 	].
+
+`RDF-DOAP 0.013 cpan:TOBYINK`
+	issued  2019-11-23;
+	changeset [
+		item "If a changeset for version 10 indicates that it's versus version 8, then the details for version 9 will be left out of changelog."^^Change;
+	].
