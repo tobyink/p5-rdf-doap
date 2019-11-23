@@ -25,4 +25,13 @@ has items => (
 	multi      => 1,
 );
 
+has versus => (
+	traits     => [ WithURI ],
+	is         => 'ro',
+	isa        => Version,
+	coerce     => 1,
+	uri        => $dcs->versus,
+	predicate  => 'has_versus',
+);
+
 1;
