@@ -77,7 +77,13 @@
 `RDF-DOAP 0.100 cpan:KJETILK`
 	issued  2017-12-21;
 	changeset [
-	  item "Replace List::MoreUtils with List::Util."^^Change;
- 	  item "RDF::DOAP::Project now has methods for foras."^^Addition;
-	  item "Some minor changes."^^Change;
+		item "Replace List::MoreUtils with List::Util."^^Change;
+		item "RDF::DOAP::Project now has methods for fora."^^Addition;
+		item "Some minor changes."^^Change;
+	].
+	
+`RDF-DOAP 0.101 cpan:TOBYINK`
+	issued  2019-11-23;
+	changeset [
+		item "If a changeset for version 10 indicates that it's versus version 8, then the details for version 9 will be left out of changelog."^^Change;
 	].
