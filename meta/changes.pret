@@ -87,3 +87,9 @@
 	changeset [
 		item "If a changeset for version 10 indicates that it's versus version 8, then the details for version 9 will be left out of changelog."^^Change;
 	].
+
+`RDF-DOAP 0.102 cpan:TOBYINK`
+	issued  2019-11-23;
+	changeset [
+		item "Cope with versions that have no changeset."^^Bugfix;
+	].
