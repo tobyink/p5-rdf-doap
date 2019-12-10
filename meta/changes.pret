@@ -99,3 +99,9 @@
 	changeset [
 		item "If versions 10 and 12 both offer changelogs since version 8, then omit details for all releases between 8 and 12 (not inclusive) instead of just 8 and 10 (not inclusive)."^^Change;
 	].
+
+`RDF-DOAP 0.104 cpan:TOBYINK`
+	issued  2019-12-10;
+	changeset [
+		item "Sort the output of $project->homepage to prioritize non-metacpan homepages over metacpan homepages."^^Change;
+	].
