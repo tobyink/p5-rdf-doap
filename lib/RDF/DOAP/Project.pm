@@ -96,10 +96,10 @@ around homepage => sub {
 	else {
 		return [
 			# de-prioritize metacpan links
-			sort { 
+			sort {
 				("$a" =~ /metacpan/ && "$b" =~ /metacpan/) ? ("$a" cmp "$b") :
 				("$a" =~ /metacpan/)                       ?  1              :
-				("$b" =~ /metacpan/)                       ? -1              : ("$a" cmp "$b") 
+				("$b" =~ /metacpan/)                       ? -1              : ("$a" cmp "$b")
 			} @{ $self->$orig() }
 		];
 	}
