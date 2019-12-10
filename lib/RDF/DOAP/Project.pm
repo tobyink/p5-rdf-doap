@@ -88,6 +88,23 @@ has repository => (
 	uri        => $doap->repository,
 );
 
+around homepage => sub {
+	my ($orig, $self, @args) = (shift, shift, @_);
+	if (@args) {
+		return $self->$orig(@args);
+	}
+	else {
+		return [
+			# de-prioritize metacpan links
+			sort { 
+				("$a" =~ /metacpan/ && "$b" =~ /metacpan/) ? ("$a" cmp "$b") :
+				("$a" =~ /metacpan/)                       ?  1              :
+				("$b" =~ /metacpan/)                       ? -1              : ("$a" cmp "$b") 
+			} @{ $self->$orig() }
+		];
+	}
+};
+
 sub rdf_load_all
 {
 	my $class = shift;
