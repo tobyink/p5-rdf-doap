@@ -37,4 +37,6 @@ for my $class (qw/ Project Version Change ChangeSet Person Issue Repository /)
 		from 'Identifier', qq{ "RDF::DOAP::$class"->rdf_load(\$_) };
 }
 
+__PACKAGE__->make_immutable;
+
 1;
