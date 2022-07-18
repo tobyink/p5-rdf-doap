@@ -105,3 +105,9 @@
 	changeset [
 		item "Sort the output of $project->homepage to prioritize non-metacpan homepages over metacpan homepages."^^Change;
 	].
+
+`RDF-DOAP 0.105 cpan:TOBYINK`
+	issued  2022-07-18;
+	changeset [
+		item "RDF::DOAP::Types->make_immutable."^^Change;
+	].
